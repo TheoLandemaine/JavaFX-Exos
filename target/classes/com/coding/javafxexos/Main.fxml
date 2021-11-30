@@ -47,6 +47,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coding.javafxexos.controller.MainController">
    <children>
@@ -108,6 +109,11 @@
             </AnchorPane>
             <AnchorPane fx:id="PagePrincipale" prefHeight="200.0" prefWidth="200.0">
                <children>
+                  <Text fx:id="txtTitre" layoutX="1.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SÉLECTIONNEZ UN MODE" textAlignment="CENTER" underline="true" wrappingWidth="621.6412658691406">
+                     <font>
+                        <Font size="42.0" />
+                     </font>
+                  </Text>
                   <fx:include fx:id="combats" source="Combats.fxml" />
                   <fx:include fx:id="temperature" source="Temperature.fxml" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                </children>

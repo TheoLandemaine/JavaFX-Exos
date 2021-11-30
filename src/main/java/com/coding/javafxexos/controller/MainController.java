@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,6 +23,9 @@ public class MainController implements Initializable {
     private AnchorPane PagePrincipale;
 
     @FXML
+    private Text txtTitre;
+
+    @FXML
     private VBox temperature;
 
     @FXML
@@ -33,12 +37,12 @@ public class MainController implements Initializable {
         PagePrincipale.getChildren().removeAll(temperature, combats);
 
         btnTemperature.setOnMouseClicked(btnCommodeAction -> {
-            PagePrincipale.getChildren().removeAll(combats);
+            PagePrincipale.getChildren().removeAll(combats, txtTitre);
             PagePrincipale.getChildren().addAll(temperature);
         });
 
         btnCombat.setOnMouseClicked(btnFauteuilAction -> {
-            PagePrincipale.getChildren().removeAll(temperature);
+            PagePrincipale.getChildren().removeAll(temperature, txtTitre);
             PagePrincipale.getChildren().addAll(combats);
         });
 
