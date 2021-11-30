@@ -38,10 +38,8 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -49,7 +47,6 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.coding.javafxexos.controller.MainController">
    <children>
@@ -92,57 +89,29 @@
             </Menu>
          </menus>
       </MenuBar>
-      <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <SplitPane dividerPositions="0.31124721603563477" focusTraversable="true" prefHeight="556.0" prefWidth="353.0" VBox.vgrow="ALWAYS">
          <items>
-            <AnchorPane>
+            <AnchorPane prefHeight="551.0" prefWidth="238.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Choix du Mode" textAlignment="CENTER" underline="true" wrapText="false">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefHeight="40.0" prefWidth="262.0" style="&#10;" text="Choix du Mode" textAlignment="CENTER" underline="true" wrapText="false">
                      <font>
                         <Font size="33.0" fx:id="x1" />
                      </font>
                   </Label>
-                  <VBox fx:id="Menu" alignment="CENTER" layoutX="14.0" prefHeight="551.0" prefWidth="225.0" spacing="100.0" styleClass="Menu">
+                  <VBox fx:id="Menu" alignment="CENTER" layoutX="14.0" prefHeight="551.0" prefWidth="243.0" spacing="100.0" styleClass="Menu">
                      <children>
-                        <Button fx:id="btnFauteuil" mnemonicParsing="false" text="Conversion Température" />
-                        <Button fx:id="btnCommode" mnemonicParsing="false" text="Simulateur de Combats" />
+                        <Button fx:id="btnTemperature" mnemonicParsing="false" text="Conversion Température" />
+                        <Button fx:id="btnCombat" mnemonicParsing="false" text="Simulateur de Combats" />
                      </children>
-                     <padding>
-                        <Insets top="-200.0" />
-                     </padding>
                   </VBox>
                </children>
             </AnchorPane>
-            <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
-               <content>
-                  <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="652.0">
-                     <children>
-                        <HBox alignment="CENTER" layoutY="63.0" prefHeight="37.0" prefWidth="653.0" spacing="107.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Degré Clesius" textAlignment="CENTER">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Degré Fareinght">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Text>
-                           </children>
-                           <padding>
-                              <Insets left="-6.0" />
-                           </padding>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="-5.0" layoutY="81.0" prefHeight="100.0" prefWidth="652.0">
-                           <children>
-                              <TextField />
-                              <Line endX="-22.341690063476562" endY="0.2928779721260071" startX="-100.0" strokeMiterLimit="11.0" />
-                              <TextField />
-                           </children>
-                        </HBox>
-                     </children></AnchorPane>
-               </content>
-            </ScrollPane>
+            <AnchorPane fx:id="PagePrincipale" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="combats" source="Combats.fxml" />
+                  <fx:include fx:id="temperature" source="Temperature.fxml" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+               </children>
+            </AnchorPane>
          </items>
       </SplitPane>
       <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
