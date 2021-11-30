@@ -75,7 +75,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.coding.javafxexos/com.coding.javafxexos.HelloApplication</mainClass>
+                            <mainClass>com.coding.javafxexos/com.coding.javafxexos.Main</mainClass>
                         </configuration>
                     </execution>
                 </executions>
