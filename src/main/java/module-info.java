@@ -9,5 +9,5 @@ module com.coding.javafxexos {
     exports com.coding.javafxexos;
     exports com.coding.javafxexos.controller;
     opens com.coding.javafxexos.controller to javafx.fxml;
-    opens com.coding.javafxexos.model to javafx.fxml;
+
 }
