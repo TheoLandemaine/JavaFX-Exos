@@ -43,7 +43,7 @@
                   <Font size="17.0" />
                </font>
             </Text>
-            <Slider layoutX="120.0" layoutY="200.0" prefHeight="16.0" prefWidth="403.0" translateX="-14.0" />
+            <Slider fx:id="sldCelsius" layoutX="120.0" layoutY="200.0" prefHeight="16.0" prefWidth="403.0" translateX="-14.0" />
             <Text layoutX="95.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" translateX="-14.0" wrappingWidth="25.0">
                <font>
                   <Font size="17.0" />
@@ -54,18 +54,18 @@
                   <Font size="17.0" />
                </font>
             </Text>
-            <Text layoutX="27.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Représentation Degré Fareinght (0 - 1 000°)" textAlignment="CENTER" translateX="-14.0" wrappingWidth="600.0">
+            <Text layoutX="27.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Représentation Degré Fahrenheit (0 - 250°)" textAlignment="CENTER" translateX="-14.0" wrappingWidth="600.0">
                <font>
                   <Font size="17.0" />
                </font>
             </Text>
-            <Slider layoutX="120.0" layoutY="300.0" max="1000.0" prefHeight="16.0" prefWidth="403.0" translateX="-14.0" />
+            <Slider fx:id="sldFarein" layoutX="120.0" layoutY="300.0" max="250.0" prefHeight="16.0" prefWidth="403.0" translateX="-14.0" />
             <Text layoutX="101.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" translateX="-14.0" wrappingWidth="25.0">
                <font>
                   <Font size="17.0" />
                </font>
             </Text>
-            <Text layoutX="523.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 000" textAlignment="CENTER" translateX="-14.0" wrappingWidth="60.0">
+            <Text layoutX="523.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="250" textAlignment="CENTER" translateX="-14.0" wrappingWidth="60.0">
                <font>
                   <Font size="17.0" />
                </font>
