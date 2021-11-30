@@ -1,23 +1,18 @@
 package com.coding.javafxexos.model;
 
-class Voleur extends Personnage{
-
-    public Voleur() {
-        this.type = "Voleur";
-    }
+class Voleur1 extends Player1{
 
     public String toString() {
         return "You are " + name + ", he inflict " + damage
-                + " damage's points, he has " + life + " life's points, he has " + initiative +
-                " initiative's points and he is a Thief";
+                + " damage's points, he has " + life + " life's points and he is a Thief";
     }
 
-    public void takeDamages(Personnage a){
+    public void takeDamages(Player1 a){
         thiefDamage(a.damage);
         CriticDamage(a.damage);
         System.out.println(name + " has " + life + " pv and received " + a.damage + " damage" );
-
     }
+
     public boolean getDodge() {
         //Creation of a number between 0 and 1
         double value = Math.random();

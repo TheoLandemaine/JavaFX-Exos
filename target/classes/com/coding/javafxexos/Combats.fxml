@@ -46,7 +46,7 @@
                            <children>
                               <HBox fx:id="hbxTitre1" layoutX="15.0" layoutY="16.0" prefHeight="41.0" prefWidth="420.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tour 1 : Joueur 1" textAlignment="CENTER" underline="true" wrappingWidth="417.27919006347656">
+                                    <Text fx:id="txtTitre1" strokeType="OUTSIDE" strokeWidth="0.0" text="Tour 1 : Joueur 1" textAlignment="CENTER" underline="true" wrappingWidth="417.27919006347656">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
@@ -55,7 +55,7 @@
                               </HBox>
                               <HBox fx:id="hbxChoix1" alignment="CENTER" layoutX="2.0" layoutY="47.0" prefHeight="62.0" prefWidth="420.0" spacing="20.0">
                                  <children>
-                                    <TextField prefWidth="100.0" promptText="Bouclier" />
+                                    <TextField fx:id="txtChamps1" prefWidth="100.0" promptText="Bouclier" />
                                     <TextField prefWidth="100.0" promptText="Esquive" />
                                     <CheckBox fx:id="cbxValider1" mnemonicParsing="false" text="Valider" />
                                  </children>
@@ -66,7 +66,7 @@
                            <children>
                               <HBox fx:id="hbxTitre2" layoutX="15.0" layoutY="16.0" prefHeight="41.0" prefWidth="420.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tour 1 : Joueur 2" textAlignment="CENTER" underline="true" wrappingWidth="417.27919006347656">
+                                    <Text fx:id="txtTitre2" strokeType="OUTSIDE" strokeWidth="0.0" text="Tour 1 : Joueur 2" textAlignment="CENTER" underline="true" wrappingWidth="417.27919006347656">
                                        <font>
                                           <Font size="24.0" />
                                        </font>

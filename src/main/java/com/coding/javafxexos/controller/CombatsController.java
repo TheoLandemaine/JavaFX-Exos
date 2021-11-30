@@ -54,6 +54,8 @@ public class CombatsController implements Initializable {
     @FXML
     private Text txtTitre2;
 
+    int y = 1;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -66,6 +68,24 @@ public class CombatsController implements Initializable {
 
         cbxValider1.setOnMouseClicked(btnCommodeAction -> {
             apnTour2.getChildren().addAll(hbxTitre2, hbxChoix2);
+            cbxValider2.setSelected(false);
+            txtTitre2.setText("Tour " + y + " : Joueur 2");
+        });
+
+        cbxValider2.setOnMouseClicked(btnCommodeAction -> {
+            if (y < 3) {
+                apnTour1.getChildren().removeAll(hbxTitre1, hbxChoix1);
+                apnTour2.getChildren().removeAll(hbxTitre2, hbxChoix2);
+                cbxValider1.setSelected(false);
+                y++;
+                txtTitre1.setText("Tour " + y + " : Joueur 1");
+                apnTour1.getChildren().addAll(hbxTitre1, hbxChoix1);
+            }else {
+                apnTour1.getChildren().removeAll(hbxTitre1, hbxChoix1);
+                apnTour2.getChildren().removeAll(hbxTitre2, hbxChoix2);
+                apnTour2.getChildren().addAll(hbxTitre2);
+                txtTitre2.setText("Le gagnant est test");
+            }
         });
 
         boxJ1.getItems().addAll(
@@ -79,7 +99,5 @@ public class CombatsController implements Initializable {
                 "Sorcière",
                 "Voleur"
         );
-
-
     }
 }
