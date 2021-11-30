@@ -8,6 +8,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -47,10 +48,16 @@ public class CombatsController implements Initializable {
     @FXML
     private CheckBox cbxValider2;
 
+    @FXML
+    private Text txtTitre1;
+
+    @FXML
+    private Text txtTitre2;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        apnTour1.getChildren().removeAll(hbxTitre1, hbxChoix1, hbxTitre2, hbxChoix2);
+        apnTour1.getChildren().removeAll(hbxTitre1, hbxChoix1);
         apnTour2.getChildren().removeAll(hbxTitre2, hbxChoix2);
 
         btnValider.setOnMouseClicked(btnCommodeAction -> {
@@ -72,7 +79,6 @@ public class CombatsController implements Initializable {
                 "Sorcière",
                 "Voleur"
         );
-
 
 
     }
