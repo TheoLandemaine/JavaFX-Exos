@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -84,7 +85,7 @@
             </AnchorPane>
             <HBox prefHeight="552.0" prefWidth="625.0">
                <children>
-                  <VBox prefHeight="400.0" prefWidth="211.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="211.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Historique des Combats" textAlignment="CENTER" underline="true">
                            <font>
@@ -94,6 +95,10 @@
                               <Insets left="7.0" top="20.0" />
                            </VBox.margin>
                         </Text>
+                        <TextArea fx:id="txtHistorique" prefHeight="512.0" prefWidth="197.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font></TextArea>
                      </children>
                   </VBox>
                </children>

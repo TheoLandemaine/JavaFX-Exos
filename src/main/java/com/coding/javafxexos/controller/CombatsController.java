@@ -6,10 +6,7 @@ import com.coding.javafxexos.model.Sorcier;
 import com.coding.javafxexos.model.Voleur;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
@@ -70,7 +67,11 @@ public class CombatsController implements Initializable {
     @FXML
     private Button btnJ2Option2;
 
+    @FXML
+    private TextArea txtHistorique;
+
     int y = 1;
+    int nbCombat = 0;
 
     Player player1 = new Player();
 
@@ -79,7 +80,7 @@ public class CombatsController implements Initializable {
     void TourJ1() {
         apnTour1.getChildren().removeAll(hbxTitre1, hbxChoix1);
         apnTour2.getChildren().addAll(hbxTitre2, hbxChoix2);
-        cbxValider2.setSelected(false);
+//        cbxValider2.setSelected(false);
         txtTitre2.setText("Tour " + y + " : Joueur 2 (" + boxJ2.getValue() + ")");
     };
 
@@ -87,7 +88,7 @@ public class CombatsController implements Initializable {
         if (y < 3) {
             apnTour1.getChildren().removeAll(hbxTitre1, hbxChoix1);
             apnTour2.getChildren().removeAll(hbxTitre2, hbxChoix2);
-            cbxValider1.setSelected(false);
+//            cbxValider1.setSelected(false);
             y++;
             txtTitre1.setText("Tour " + y + " : Joueur 1 (" + boxJ1.getValue() + ")");
             apnTour1.getChildren().addAll(hbxTitre1, hbxChoix1);
@@ -98,8 +99,10 @@ public class CombatsController implements Initializable {
 
             if(player1.getLife() > player2.getLife()) {
                 txtTitre2.setText("Le gagnant est le Joueur 1 qui est un " + boxJ1.getValue());
+                txtHistorique.appendText("Combat n°" + nbCombat + "\nVainqueur : Player 1" + "\nPerdant : Player 2" + "\n\n");
             }else {
                 txtTitre2.setText("Le gagnant est le Joueur 2 qui est un " + boxJ2.getValue());
+                txtHistorique.appendText("Combat n°" + nbCombat + "\nVainqueur : Player 2" + "\nPerdant : Player 1" + "\n\n");
             }
 
         }
@@ -112,6 +115,11 @@ public class CombatsController implements Initializable {
         apnTour2.getChildren().removeAll(hbxTitre2, hbxChoix2);
 
         btnValider.setOnMouseClicked(btnCommodeAction -> {
+            apnTour1.getChildren().removeAll(hbxTitre1, hbxChoix1);
+            apnTour2.getChildren().removeAll(hbxTitre2, hbxChoix2);
+            y = 1;
+            nbCombat++;
+
             if (boxJ1.getValue() == "Guerrier") {
                 player1 = new Guerrier();
                 btnJ1Option1.setText("Attaquer");
@@ -133,6 +141,7 @@ public class CombatsController implements Initializable {
 
                 System.out.println("J1 Voleur" + player1);
             }
+
 
             if (boxJ2.getValue() == "Guerrier") {
                 player2 = new Guerrier();
@@ -160,24 +169,57 @@ public class CombatsController implements Initializable {
             txtTitre1.setText("Tour " + y + " : Joueur 1 (" + boxJ1.getValue() + ")");
         });
 
-        btnJ1Option1.setOnMouseClicked(btnCommodeAction -> {
+        btnJ1Option1.setOnMouseClicked(btnJ1Option1 -> {
             TourJ1();
+
+            if (boxJ1.getValue() == "Voleur") {
+                //critical truc
+            }else {
+                player1.doDamages(player2);
+            }
+
         });
 
-        btnJ1Option2.setOnMouseClicked(btnCommodeAction -> {
+        btnJ1Option2.setOnMouseClicked(btnJ1Option2 -> {
             TourJ1();
+            if (boxJ1.getValue() == "Guerrier") {
+                player1.Shield();
+
+            }else if (boxJ1.getValue() == "Sorcier") {
+                player1.doDamagesMagic(player2);
+
+            }else if (boxJ1.getValue() == "Voleur") {
+                player1.doDamages(player2);
+            }
         });
 
-        btnJ2Option1.setOnMouseClicked(btnCommodeAction -> {
+        btnJ2Option1.setOnMouseClicked(btnJ2Option1 -> {
             TourJ2();
+            if (boxJ1.getValue() == "Voleur") {
+                //critical truc
+            }else {
+                player2.doDamages(player1);
+            }
+
+            System.out.println(player1.getLife());
+            System.out.println(player2.getLife());
         });
 
-        btnJ2Option2.setOnMouseClicked(btnCommodeAction -> {
+        btnJ2Option2.setOnMouseClicked(btnJ2Option2 -> {
             TourJ2();
+            if (boxJ1.getValue() == "Guerrier") {
+                player2.Shield();
+
+            }else if (boxJ1.getValue() == "Sorcier") {
+                player2.doDamagesMagic(player1);
+
+            }else if (boxJ1.getValue() == "Voleur") {
+                player2.doDamages(player1);
+            }
+
+            System.out.println(player1.getLife());
+            System.out.println(player2.getLife());
         });
-
-
-
 
 
 

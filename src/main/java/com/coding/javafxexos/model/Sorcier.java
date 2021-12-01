@@ -2,8 +2,6 @@ package com.coding.javafxexos.model;
 
 public class Sorcier extends Player{
 
-    int spell = 20;
-
     public int getSpell() {
         return spell;
     }
@@ -12,17 +10,10 @@ public class Sorcier extends Player{
         this.spell = spell;
     }
 
-    public void takeDamages(Player a){
-        //Set attack's damage
-        life = life - a.damage - spell;
-        spell = spell / 2;
-    }
+//    public void doDamagesMagic(Player a){
+//        //Set attack's damage
+//        a.life = a.life - damage - spell;
+//        spell = spell / 2;
+//    }
 
-    public String toString() {
-        return "Sorcier{" +
-                "damage=" + damage +
-                ", life=" + life +
-                ", spell=" + spell +
-                '}';
-    }
 }
